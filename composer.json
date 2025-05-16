@@ -3,7 +3,6 @@
     "description": "Laravel-based web platform for selling German Shepherd Dogs (GSDs) and related products at Earmark Kennel",
     "type": "project",
     "require": {
-        "laravel/framework": "^10.48",
         "guzzlehttp/guzzle": "^7.9"
     },
     "require-dev": {

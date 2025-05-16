@@ -23,7 +23,7 @@
                 <tbody>
                     <?php
                     include('includes/dbconn.php');
-                    $sql = "SELECT * FROM tblcnp WHERE voided = 0 ORDER BY id DESC";
+                    $sql = "SELECT * FROM tblcnp  ORDER BY id DESC";
                     $result = mysqli_query($con, $sql);
                     if (mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {

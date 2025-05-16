@@ -63,57 +63,75 @@
 <body>
 
 <div class="container">
-<?php
-if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-    $id = intval($_GET['id']);
-    $sql = "SELECT * FROM tblcnp WHERE id = ? AND voided = 0";
+    <?php
+    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+        $id = intval($_GET['id']);
+        $sql = "SELECT * FROM tblcnp WHERE id = ? AND voided = 0";
 
-    if ($stmt = mysqli_prepare($con, $sql)) {
-        mysqli_stmt_bind_param($stmt, 'i', $id);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
+        if ($stmt = mysqli_prepare($con, $sql)) {
+            mysqli_stmt_bind_param($stmt, 'i', $id);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
 
-        if ($result && mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
+            if ($result && mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
 
-            $name = htmlspecialchars($row['name']);
-            $sex = htmlspecialchars($row['sex']);
-            $dob = htmlspecialchars($row['dob']);
-            $status = htmlspecialchars($row['status']);
-            $description = nl2br(htmlspecialchars($row['description']));
-            $image = htmlspecialchars($row['image']);
-            $video = htmlspecialchars($row['video']);
+                // Safe for display text
+                $name = htmlspecialchars($row['name']);
+                $sex = htmlspecialchars($row['sex']);
+                $dob = htmlspecialchars($row['dob']);
+                $status = htmlspecialchars($row['status']);
+                $description = nl2br(htmlspecialchars($row['description']));
 
-            echo $image ? "<img src=\"$image\" alt=\"$name\" class=\"dog-img\">" 
-                        : "<p class='no-media'>No image available.</p>";
+                // Get image and video paths from database
+                $image_db_path = $row['image'];
+                $video_db_path = $row['video'];
 
-            echo "<h1>$name</h1>";
-            echo "<div class='dog-details'>
+                // FIX PATHS: Add "../" prefix since script is in includes/ directory
+                // For the image path - note it's "images/" not "image/"
+                $image = "../" . $image_db_path;
+
+                // For the video path
+                $video = "../" . $video_db_path;
+
+                // Display image
+                if (!empty($image_db_path)) {
+                    echo "<img src=\"$image\" alt=\"$name\" class=\"dog-img\">";
+                } else {
+                    echo "<p class='no-media'>No image available.</p>";
+                }
+
+                echo "<h1>$name</h1>";
+                echo "<div class='dog-details'>
                     <p><strong>Sex:</strong> $sex</p>
                     <p><strong>DOB:</strong> $dob</p>
                     <p><strong>Status:</strong> $status</p>
                     <p><strong>Description:</strong> $description</p>
                   </div>";
 
-            echo $video ? "<video controls>
-                            <source src=\"$video\" type=\"video/mp4\">
-                            Your browser does not support the video tag.
-                          </video>" 
-                        : "<p class='no-media'>No video available.</p>";
+                // Display video
+                if (!empty($video_db_path)) {
+                    echo "<video controls>
+                        <source src=\"$video\" type=\"video/mp4\">
+                        Your browser does not support the video tag.
+                      </video>";
+                } else {
+                    echo "<p class='no-media'></p>";
+                }
+            } else {
+                echo "<p class='no-media'>No details found for the specified ID.</p>";
+            }
+
+            mysqli_stmt_close($stmt);
         } else {
-            echo "<p class='no-media'>No details found for the specified ID.</p>";
+            echo "<p class='no-media'>Query preparation failed.</p>";
         }
-
-        mysqli_stmt_close($stmt);
     } else {
-        echo "<p class='no-media'>Query preparation failed.</p>";
+        echo "<p class='no-media'>Invalid or missing ID parameter.</p>";
     }
-} else {
-    echo "<p class='no-media'>Invalid or missing ID parameter.</p>";
-}
 
-mysqli_close($con);
-?>
+    mysqli_close($con);
+    ?>
 </div>
 
 <!-- Scripts -->
