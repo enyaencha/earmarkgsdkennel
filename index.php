@@ -38,7 +38,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.php" style="display:flex; align-items:center;">
+    <a class="navbar-brand" href="home" style="display:flex; align-items:center;">
         <img src="images/home/earmark3.png" alt="Logo" style="height:50px; margin-right:10px;">
         <span style="color:#FFF; font-size:18px; font-weight:bold;">EARMARK GSD KENNEL</span>
     </a>
@@ -47,10 +47,10 @@
     
                 <div class="collapse navbar-collapse navbar-right wow fadeInDown">
                     <ul class="nav navbar-nav">
-                         <li class="active"><a href="index.php"><i class="fa fa-home"></i>Home</a></li>
-                        <li ><a href="about-us.php">About Us</a></li>
-                        <li ><a href="available.php">Available Products</a></li>
-                        <li><a href="contacts.php">Contacts</a></li>
+                         <li class="active"><a href="home"><i class="fa fa-home"></i>Home</a></li>
+                        <li ><a href="about-us">About Us</a></li>
+                        <li ><a href="available">Available Products</a></li>
+                        <li><a href="contacts">Contacts</a></li>
                                                                
                     </ul>
                 </div>
@@ -134,7 +134,7 @@
     <!-- <div class="panel-heading wow fadeInDown" style="font-weight:bold; font-size:16px; color:#36648B;">Earmark Page</div> -->
     <ul class="list-group">
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="about-us.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="about-us" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                About Us 
@@ -142,7 +142,7 @@
             </a>
         </li>
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="ourdog.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="ourdog" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                Our Dogs
@@ -150,14 +150,14 @@
             </a>
         </li>
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="contacts.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="contacts" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                Contacts
             </a>
         </li>
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="availablestud.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="availablestud" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                Available Studs
@@ -165,7 +165,7 @@
             </a>
         </li>
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="upcoming.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="upcoming" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                Upcoming Litter
@@ -173,7 +173,7 @@
             </a>
         </li>
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="available.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="available" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                Current Litter
@@ -181,7 +181,7 @@
             </a>
         </li>
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="pastlitter.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="pastlitter" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                Past Litter
@@ -189,7 +189,7 @@
             </a>
         </li>
         <li class="list-group-item wow fadeInDown" style="font-weight:bold;">
-            <a href="available.php" style="display:block; color:#000; text-decoration:none;" 
+            <a href="available" style="display:block; color:#000; text-decoration:none;"
                onmouseover="this.style.color='#36648B'; this.parentElement.style.backgroundColor='#f0f8ff';" 
                onmouseout="this.style.color='#000'; this.parentElement.style.backgroundColor='white';">
                Other product
@@ -212,7 +212,7 @@
 
             
               </ul>
-              <a href="available.php" class="btn btn-success btn-sm pull-right wow fadeInDown">Click here to View More</a>
+              <a href="available" class="btn btn-success btn-sm pull-right wow fadeInDown">Click here to View More</a>
             </div>
             
 
@@ -240,7 +240,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right wow fadeInDown">
-                        <li class="wow fadeInDown"><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="wow fadeInDown"><a href="home"><i class="fa fa-home"></i> Home</a></li>
                         
                         <li class="wow fadeInDown"><a href="contacts.php"><i class="fa fa-phone"></i> Contacts</a></li>
                         <li class="wow fadeInDown"><a href="#loginModal" data-toggle="modal" data-target="#loginModal"><i class="fa fa-lock"></i> Admin</a></li>

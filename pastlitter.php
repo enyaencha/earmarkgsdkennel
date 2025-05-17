@@ -125,6 +125,8 @@
             $image = !empty($row['image']) ? htmlspecialchars($row['image']) : 'images/default.png';
             echo '<div class="dog-card">';
             echo '<a href="includes/full.php?id=' . $id . '"><img src="' . $image . '" alt="' . htmlspecialchars($row['name']) . '"></a>';
+//            echo '<a href="/full-details/' . $id . '"><img src="' . $image . '" alt="' . htmlspecialchars($row['name']) . '"></a>';
+
             echo '<h3>' . htmlspecialchars($row['name']) . '</h3>';
             // Uncomment below if needed:
             // echo '<p>Sex: ' . htmlspecialchars($row['sex']) . '</p>';
