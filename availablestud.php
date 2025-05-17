@@ -14,10 +14,16 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding-top: 60px; /* to avoid overlap from fixed navbar */
+            background: #fefefe;
+            padding-top: 30px;
+            text-align: center;
         }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
 
         .navbar {
             position: fixed;
@@ -27,7 +33,6 @@
             background-color: #000;
             border: none;
             border-radius: 0;
-            margin-bottom: 0;
         }
 
         .navbar .navbar-brand {
@@ -75,16 +80,16 @@
         .dog-card {
             background-color: white;
             border: 1px solid #ddd;
-            border-radius: 10px;
+            border-radius: 7px;
             overflow: hidden;
             box-shadow: 0 2px 5px rgba(20, 4, 4, 0.1);
             text-align: center;
-            padding: 15px;
+            padding: 7px;
         }
 
         .dog-card img {
-            width: 900px;
-            height: 1100px;
+            width: 700px;
+            height: 900px;
             object-fit: cover;
         }
 

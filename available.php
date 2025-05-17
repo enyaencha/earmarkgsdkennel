@@ -23,9 +23,25 @@
 
     <style>
         html, body {
-            height: 100%;
+            height: 110%;
             margin: 0;
             padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 2px;
+        }
+
+        /* Navbar overrides */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: #000;
+            border: none;
+            border-radius: 0;
         }
         #tour-packages {
             display: flex;
@@ -36,34 +52,56 @@
         }
         iframe {
             flex-grow: 1;
-            width: 100%;
+            width: 70%;
             border: none;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Navbar overrides */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: #000;
+            border: none;
+            border-radius: 0;
+        }
+
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+
+        .navbar .navbar-brand:hover {
+            color: #ccc !important;
+        }
+
+        .navbar .navbar-nav > li > a {
+            color: #fff !important;
+        }
+
+        .navbar .navbar-nav > li.active > a {
+            background-color: #FFA500 !important; /* Light orange */
+            color: #000 !important;
+        }
+
+        .navbar .navbar-nav > li > a:hover {
+            background-color: #222 !important;
+            color: #FFA500 !important;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: #fff;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-inverse" role="banner">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="index.php"><h4 class="wow fadeInDown" style="margin-top:20px; color:#FFF;">EARMARK GSD KENNEL</h4></a>
-            </div>
-
-            <div class="collapse navbar-collapse navbar-right wow fadeInDown">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.php"><i class="fa fa-home"></i>Home</a></li>
-                    <li><a href="about-us.php">About Us</a></li>
-                    <li class="active"><a href="available.php">Available Products</a></li>
-                    <li><a href="contacts.php">Contacts</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- Include Reusable Navbar -->
+<?php //include('includes/navbar.php'); ?>
 
     <section id="tour-packages" class="wow fadeInDown">
         <h1 style="font-size:30px; font-family:verdana; font-weight:bold; color: #8B8B00; text-align:center;">Product</h1>

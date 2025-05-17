@@ -1,0 +1,17 @@
+RewriteEngine On
+
+#Handle /full-details/123 -> includes/full.php?id=123
+RewriteRule ^full-details/([0-9]+)$ includes/full.php?id=$1 [L,QSA]
+# Rewrite 'home' to 'index.php'
+RewriteRule ^home$ index.php [L]
+
+# Skip existing files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Rewrite /full-details/123 to includes/full.php?id=123
+#RewriteRule ^full-details/([0-9]+)$ includes/full.php?id=$1 [L]
+
+# Rewrite other URLs to .php
+RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L]
+
