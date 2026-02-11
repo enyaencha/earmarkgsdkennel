@@ -62,19 +62,24 @@
 <div class="container-fluid">
     <br>
         <div class="col-md-9 wow fadeInDown">
-        <?php include('includes/dbconn.php'); ?>
 
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000" style="height: 100%; width: 100%; margin-top: 8px; overflow:hidden;">
     
     <?php
-    $sql = "SELECT * FROM tblcnp WHERE status = 'available' AND voided = 0 ORDER BY id DESC";
-    $result = mysqli_query($con, $sql) or die(mysqli_error($con));
-    
-    if (mysqli_num_rows($result) > 0):
-        $slides = [];
-        while ($row = mysqli_fetch_assoc($result)) {
-            $slides[] = $row; // store all rows
+    $slides = [];
+
+    if ($con instanceof mysqli) {
+        $sql = "SELECT * FROM tblcnp WHERE status = 'available' AND voided = 0 ORDER BY id DESC";
+        $result = mysqli_query($con, $sql);
+
+        if ($result instanceof mysqli_result) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $slides[] = $row; // store all rows
+            }
         }
+    }
+
+    if (count($slides) > 0):
     ?>
 
     <!-- Indicators -->
@@ -106,7 +111,12 @@
     </a>
 
     <?php else: ?>
-        <p style="color: red;">No available images found in the database.</p>
+        <div class="alert alert-warning" style="margin-top: 10px;">
+            We couldn't load available images right now.
+            <?php if (!empty($db_connection_error)): ?>
+                <br><small>Database connection issue: <?= htmlspecialchars($db_connection_error) ?></small>
+            <?php endif; ?>
+        </div>
     <?php endif; ?>
 </div>
     
